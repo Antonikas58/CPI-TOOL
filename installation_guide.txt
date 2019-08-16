@@ -1,0 +1,56 @@
+SDI EDOCUMENT ITALY SDI UPLOAD GUIDE
+
+The SdI Upload tool for eDocument Italy package allows you manually upload notifications and invoices from Tax Authority portal (SdI) to your CPI tenant. 
+
+In some cases SdI fails to submit invoices or notifications to CPI tenant. After several retries SdI stops retrying and the only way to submit missing data is manual upload. first your download from SdI web site missing data, then you upload them to your CPI tenant using this tool.
+
+
+
+1. PROVIDE PERMISSIONS
+
+Open CP Account Cockpit of your CPI tenant. Go to Authorizations.
+Grant to your user a role "ESBMessaging.send" from xxxxiflmap application. If you use SSO to login to CP web ui, grant same role to a user <user>@sso_ca where <user> is your user name.
+
+
+
+2. CONFIGURE INTEGRATION FLOW "SdI Upload App" (OPTIONAL) 
+
+If necessary, change default settings of the tool. Normally this step is not required.
+- receiveInvoiceEndpoint:  path to 'Italy Receive Invoice' integration flow (default /cxf/ItalyReceiveInvoice)
+- receiveNotificationEndpoint: path to 'Italy Receive Notification' integratin flow (default /cxf/ItalyReceiveNotification)
+
+
+
+3. DEPLOY INTEGRATION FLOW "SdI Upload App"
+
+Deploy an integration flow "SdI Upload App". Go to Monitor -> Manage Integration Content
+Wait till the integration flow gets status "Started" and copy its endpoint url to the clipboard (removing the * at the end of the endpoint URL). 
+
+Note: Use the standard tenant runtime URL, not the SdI-specific custom ssl host configured for the SdI channel because your browser typically wont trust to server certificates deployed on that custom ssl host.
+
+Example of tool's URL:
+https://xyz-iflmap.avtabc.eu1.hana.ondemand.com/http/edocument_italy_sdi_upload/
+
+
+4. USE THE TOOL
+
+Open the tool's URL in browser. The browser should display buttons for uploading invoices and invoice notifications. 
+
+In case your browser is not configured for single-sign-on you will get a login popup, otherwise you will directly login into the tool using your SSO certificate. In case of issues (HTTP 403 Forbidden), check step 1 for necessary security settings of your user. You can also check the HTTP Access Log of your CPI tenant to trouble-shoot login issues. 
+
+
+4.1 UPLOAD INVOICE NOTIFICATION
+
+Download an invoice notification from the Tax Authority portal.
+Click on 'Upload Invoice Notification'. Select the invoice notification file and click "Upload!". The tool submits the data to your CPI tenant and displays the status.
+
+You can click "Start Again" to upload another invoice notification.
+
+
+4.2 UPLOAD INVOICE
+
+Download an invoice and its metadata from the Tax Authority portal. The supported metadata file is downloadable from a following section of the Tax Authority portal: Monitoraggio delle ricevute dei file trasmessi -> Dettaglio.
+Click on 'Upload Invoice'. Select the metadata and invoice files and click "Upload!". The tool submits the data to your CPI tenant and displays the status. 
+
+You can click "Start Again" to upload another invoice.
+

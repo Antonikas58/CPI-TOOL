@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:FatturaElettronica xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:p="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" versione="FPR12">
+<FatturaElettronicaHeader>
+<DatiTrasmissione>
+<IdTrasmittente>
+<IdPaese>IT</IdPaese>
+<IdCodice>00125230219</IdCodice>
+</IdTrasmittente>
+<ProgressivoInvio>627839</ProgressivoInvio>
+<FormatoTrasmissione>FPR12</FormatoTrasmissione>
+<CodiceDestinatario>UWR7WJY</CodiceDestinatario>
+</DatiTrasmissione>
+<CedentePrestatore>
+<DatiAnagrafici>
+<IdFiscaleIVA>
+<IdPaese>IT</IdPaese>
+<IdCodice>00125230219</IdCodice>
+</IdFiscaleIVA>
+<CodiceFiscale>00125230219</CodiceFiscale>
+<Anagrafica>
+<Denominazione>Wuerth S.r.l</Denominazione>
+</Anagrafica>
+<RegimeFiscale>RF01</RegimeFiscale>
+</DatiAnagrafici>
+<Sede>
+<Indirizzo>Via Stazione 51</Indirizzo>
+<CAP>39044</CAP>
+<Comune>Egna</Comune>
+<Nazione>IT</Nazione>
+</Sede>
+<IscrizioneREA>
+<Ufficio>BZ</Ufficio>
+<NumeroREA>BZ-56205</NumeroREA>
+<CapitaleSociale>25000000.00</CapitaleSociale>
+<SocioUnico>SU</SocioUnico>
+<StatoLiquidazione>LN</StatoLiquidazione>
+</IscrizioneREA>
+<Contatti>
+<Telefono>06 90103103</Telefono>
+<Email>servizioclienti@wuerth.it</Email>
+</Contatti>
+</CedentePrestatore>
+<CessionarioCommittente>
+<DatiAnagrafici>
+<IdFiscaleIVA>
+<IdPaese>IT</IdPaese>
+<IdCodice>01791490343</IdCodice>
+</IdFiscaleIVA>
+<CodiceFiscale>01791490343</CodiceFiscale>
+<Anagrafica>
+<Denominazione>IRETI S.p.A.</Denominazione>
+</Anagrafica>
+</DatiAnagrafici>
+<Sede>
+<Indirizzo>VIA PIACENZA 54</Indirizzo>
+<CAP>16138</CAP>
+<Comune>GENOVA</Comune>
+<Nazione>IT</Nazione>
+</Sede>
+</CessionarioCommittente>
+</FatturaElettronicaHeader>
+<FatturaElettronicaBody>
+<DatiGenerali>
+<DatiGeneraliDocumento>
+<TipoDocumento>TD01</TipoDocumento>
+<Divisa>EUR</Divisa>
+<Data>2019-05-14</Data>
+<Numero>4276008663</Numero>
+<ImportoTotaleDocumento>388.83</ImportoTotaleDocumento>
+<Causale> Rif.vs.ODA 8620002061 del 24-04-2019 Sig.Luca Montanari PRODUZIONE ACQUA REGGIO EMILIA</Causale>
+</DatiGeneraliDocumento>
+<DatiOrdineAcquisto>
+<RiferimentoNumeroLinea>1</RiferimentoNumeroLinea>
+<RiferimentoNumeroLinea>2</RiferimentoNumeroLinea>
+<IdDocumento>Rif.vs.ODA 862000206</IdDocumento>
+</DatiOrdineAcquisto>
+<DatiDDT>
+<NumeroDDT>8310143707</NumeroDDT>
+<DataDDT>2019-05-14</DataDDT>
+<RiferimentoNumeroLinea>1</RiferimentoNumeroLinea>
+<RiferimentoNumeroLinea>2</RiferimentoNumeroLinea>
+</DatiDDT>
+</DatiGenerali>
+<DatiBeniServizi>
+<DettaglioLinee>
+<NumeroLinea>1</NumeroLinea>
+<CodiceArticolo>
+<CodiceTipo>AswArtFor</CodiceTipo>
+<CodiceValore>009620 80 005   25</CodiceValore>
+</CodiceArticolo>
+<Descrizione>VITE-TE-ISO4017-A2 70-CH30-M20X80</Descrizione>
+<Quantita>100.00</Quantita>
+<PrezzoUnitario>1.612800</PrezzoUnitario>
+<PrezzoTotale>161.280000</PrezzoTotale>
+<AliquotaIVA>22.00</AliquotaIVA>
+<AltriDatiGestionali>
+<TipoDato>COD_CLI</TipoDato>
+<RiferimentoTesto>511080210</RiferimentoTesto>
+</AltriDatiGestionali>
+<AltriDatiGestionali>
+<TipoDato>NUM_ORD</TipoDato>
+<RiferimentoTesto>2076948160</RiferimentoTesto>
+</AltriDatiGestionali>
+<AltriDatiGestionali>
+<TipoDato>IND_SPE</TipoDato>
+<RiferimentoTesto>VIA NUBI DI MAGELLANO 30 30 42123 REGGIO NELL&apos;EMILIA</RiferimentoTesto>
+</AltriDatiGestionali>
+</DettaglioLinee>
+<DettaglioLinee>
+<NumeroLinea>2</NumeroLinea>
+<CodiceArticolo>
+<CodiceTipo>AswArtFor</CodiceTipo>
+<CodiceValore>030020    005   25</CodiceValore>
+</CodiceArticolo>
+<Descrizione>DADO ESAG. DIN 934 OTTONE GR.   M 20</Descrizione>
+<Quantita>100.00</Quantita>
+<PrezzoUnitario>1.574300</PrezzoUnitario>
+<PrezzoTotale>157.430000</PrezzoTotale>
+<AliquotaIVA>22.00</AliquotaIVA>
+<AltriDatiGestionali>
+<TipoDato>COD_CLI</TipoDato>
+<RiferimentoTesto>511080210</RiferimentoTesto>
+</AltriDatiGestionali>
+<AltriDatiGestionali>
+<TipoDato>NUM_ORD</TipoDato>
+<RiferimentoTesto>2076948160</RiferimentoTesto>
+</AltriDatiGestionali>
+<AltriDatiGestionali>
+<TipoDato>IND_SPE</TipoDato>
+<RiferimentoTesto>VIA NUBI DI MAGELLANO 30 30 42123 REGGIO NELL&apos;EMILIA</RiferimentoTesto>
+</AltriDatiGestionali>
+</DettaglioLinee>
+<DatiRiepilogo>
+<AliquotaIVA>22.00</AliquotaIVA>
+<ImponibileImporto>318.71</ImponibileImporto>
+<Imposta>70.12</Imposta>
+</DatiRiepilogo>
+</DatiBeniServizi>
+<DatiPagamento>
+<CondizioniPagamento>TP02</CondizioniPagamento>
+<DettaglioPagamento>
+<ModalitaPagamento>MP05</ModalitaPagamento>
+<DataScadenzaPagamento>2019-09-30</DataScadenzaPagamento>
+<ImportoPagamento>388.83</ImportoPagamento>
+<IBAN>IT24W0310411700000000210039</IBAN>
+<BIC>DEUTITM1780</BIC>
+</DettaglioPagamento>
+</DatiPagamento>
+</FatturaElettronicaBody>
+</p:FatturaElettronica>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns3:FatturaElettronica xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" xmlns:ns3="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2" versione="FPR12"><FatturaElettronicaHeader><DatiTrasmissione><IdTrasmittente><IdPaese>IT</IdPaese><IdCodice>01277390249</IdCodice></IdTrasmittente><ProgressivoInvio>4472</ProgressivoInvio><FormatoTrasmissione>FPR12</FormatoTrasmissione><CodiceDestinatario>M0JDX3K</CodiceDestinatario><ContattiTrasmittente></ContattiTrasmittente></DatiTrasmissione><CedentePrestatore><DatiAnagrafici><IdFiscaleIVA><IdPaese>IT</IdPaese><IdCodice>01277390249</IdCodice></IdFiscaleIVA><CodiceFiscale>01277390249</CodiceFiscale><Anagrafica><Denominazione>GIOVANNI BERTIN SPA</Denominazione></Anagrafica><RegimeFiscale>RF01</RegimeFiscale></DatiAnagrafici><Sede><Indirizzo>VIA CROCERON 133</Indirizzo><CAP>36022</CAP><Comune>CASSOLA</Comune><Provincia>VI</Provincia><Nazione>IT</Nazione></Sede><IscrizioneREA><Ufficio>VI</Ufficio><NumeroREA>157675</NumeroREA><CapitaleSociale>516500.00</CapitaleSociale><SocioUnico>SM</SocioUnico><StatoLiquidazione>LN</StatoLiquidazione></IscrizioneREA><Contatti><Telefono>0424566636</Telefono><Fax>0424566347</Fax><Email>INFO@GIOVANNIBERTIN.COM</Email></Contatti></CedentePrestatore><CessionarioCommittente><DatiAnagrafici><IdFiscaleIVA><IdPaese>IT</IdPaese><IdCodice>02050760228</IdCodice></IdFiscaleIVA><CodiceFiscale>02050760228</CodiceFiscale><Anagrafica><Denominazione>FLY SPA</Denominazione></Anagrafica></DatiAnagrafici><Sede><Indirizzo>ZONA INDUSTRIALE, 19</Indirizzo><CAP>38055</CAP><Comune>GRIGNO</Comune><Provincia>TN</Provincia><Nazione>IT</Nazione></Sede></CessionarioCommittente></FatturaElettronicaHeader><FatturaElettronicaBody><DatiGenerali><DatiGeneraliDocumento><TipoDocumento>TD01</TipoDocumento><Divisa>EUR</Divisa><Data>2019-03-23</Data><Numero>2888/1</Numero><ImportoTotaleDocumento>129.32</ImportoTotaleDocumento><Causale>Ordine N. 190000351 del 07/03/19</Causale></DatiGeneraliDocumento><DatiDDT><NumeroDDT>0000560</NumeroDDT><DataDDT>2019-03-18</DataDDT><RiferimentoNumeroLinea>1</RiferimentoNumeroLinea></DatiDDT></DatiGenerali><DatiBeniServizi><DettaglioLinee><NumeroLinea>1</NumeroLinea><CodiceArticolo><CodiceTipo>Codice Art. fornitore</CodiceTipo><CodiceValore>0800540</CodiceValore></CodiceArticolo><Descrizione>TOTAL OSYRIS DWX 4100 I-LT.20</Descrizione><Quantita>1.00000000</Quantita><UnitaMisura>Numero</UnitaMisura><PrezzoUnitario>106.000000</PrezzoUnitario><PrezzoTotale>106.00</PrezzoTotale><AliquotaIVA>22.00</AliquotaIVA></DettaglioLinee><DatiRiepilogo><AliquotaIVA>22.00</AliquotaIVA><ImponibileImporto>106.00</ImponibileImporto><Imposta>23.32</Imposta><EsigibilitaIVA>I</EsigibilitaIVA></DatiRiepilogo></DatiBeniServizi><DatiPagamento><CondizioniPagamento>TP02</CondizioniPagamento><DettaglioPagamento><ModalitaPagamento>MP12</ModalitaPagamento><DataRiferimentoTerminiPagamento>2019-03-23</DataRiferimentoTerminiPagamento><GiorniTerminiPagamento>69</GiorniTerminiPagamento><DataScadenzaPagamento>2019-05-31</DataScadenzaPagamento><ImportoPagamento>129.32</ImportoPagamento></DettaglioPagamento></DatiPagamento></FatturaElettronicaBody><ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#" Id="Signer-T-1553592022999">
+<ds:SignedInfo>
+<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2006/12/xml-c14n11#WithComments"></ds:CanonicalizationMethod>
+<ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></ds:SignatureMethod>
+<ds:Reference Type="http://uri.etsi.org/01903#SignedProperties" URI="#SignedProperties-Signer-T-1553592022999">
+<ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></ds:DigestMethod>
+<ds:DigestValue>qH+cQXoVoK51OGGIa6t5NBawiivwY2JQKY3SrZt6ctI=</ds:DigestValue>
+</ds:Reference>
+<ds:Reference URI="">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2002/06/xmldsig-filter2">
+<dsig-xpath:XPath xmlns:dsig-xpath="http://www.w3.org/2002/06/xmldsig-filter2" Filter="subtract">/descendant::ds:Signature</dsig-xpath:XPath>
+</ds:Transform>
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></ds:DigestMethod>
+<ds:DigestValue>eoc/QF1h3pAm4UOV1U8MmMvDgsVVP4d5zlhX44GA3Pg=</ds:DigestValue>
+</ds:Reference>
+<ds:Reference URI="#KeyInfo-Signer-T-1553592022999">
+<ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></ds:DigestMethod>
+<ds:DigestValue>6j+BuaXKfqjYfwiqHMpGoB+BPmwRj8XC4BBUVaWapd4=</ds:DigestValue>
+</ds:Reference>
+</ds:SignedInfo>
+<ds:SignatureValue>
+Wyotme9CTwr2NnxCNXd2KQ4wz2S2iTb9C4c5By+iYsAhAhehZXtcc0PdBKObDRIaE4emrdlv6ece
+l6q3pl4Vp8Sron+KlHjstBL9bUbSdJDreJSRwU8iRW/D9c4IzdM+w7qS6/v2fG+Pr7ZBCn62curU
+xuYfoV4qFvC0Pl27ENLawdNx5OHNoCtV2XINlqNl/EJ2WCsD+tVmynjte6BHwkv1nSczb8UCjBXl
+YLJtddGvYm8m4T3NONBAzLYqxEGA5InsERcMG3SwYFKL0cnO2pgYcZ+EDwJ3niJp7cNcAnD86v61
+EYSM9P9F5u6M9GDiLN7MzkkNF88lunAbHv7ldQ==
+</ds:SignatureValue>
+<ds:KeyInfo Id="KeyInfo-Signer-T-1553592022999">
+<ds:X509Data>
+<ds:X509Certificate>
+MIIIFTCCBf2gAwIBAgIISF1knr2eQPEwDQYJKoZIhvcNAQELBQAwgbIxCzAJBgNVBAYTAklUMQ8w
+DQYDVQQHDAZBcmV6em8xGDAWBgNVBAoMD0FydWJhUEVDIFMucC5BLjEaMBgGA1UEYQwRVkFUSVQt
+MDE4NzkwMjA1MTcxKTAnBgNVBAsMIFF1YWxpZmllZCBUcnVzdCBTZXJ2aWNlIFByb3ZpZGVyMTEw
+LwYDVQQDDChBcnViYVBFQyBFVSBRdWFsaWZpZWQgQ2VydGlmaWNhdGVzIENBIEcxMB4XDTE4MDYy
+MDExMzcwNFoXDTIxMDYyMDExMzcwNFowgcUxCzAJBgNVBAYTAklUMRwwGgYDVQQKDBNHSU9WQU5O
+SSBCRVJUSU4gU1BBMRowGAYDVQRhDBFWQVRJVC0wMTI3NzM5MDI0OTEPMA0GA1UEBAwGQkVSVElO
+MREwDwYDVQQqDAhHSU9WQU5OSTEfMB0GA1UEBRMWVElOSVQtQlJUR05ONjdNMDhBNzAzWDEYMBYG
+A1UEAwwPR0lPVkFOTkkgQkVSVElOMR0wGwYDVQQuExRXU1JFRi03NzU1MjkwNzQzMTIwMTCCASIw
+DQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALyDjfYmlFDBGaF+RQ/55QSeAhpsW05ilBMlLR+k
+U2N4AReQb6w8Ak2tw9CLI/JyF/8BQ8eaeTzyhnQflEC+AznJzxG2Nrk+I4wbMI4G1aLghHsHZVVW
+kNriOvJsntvWEQbP3XXaCIGRykDhdMlQ1Xr6VbhpFbuKSFPN5Y8RBXIa2sJs9XlN3ekrTQjNtkDE
+1abd85BjAMNhLZGNoZ3oeCmU2QDmpjhcWYtMRd1Vap+/s/BcN2ZFuyZLbLU/8NuBQ3N5A45AhgLn
+yQ+595J9r3kDp1//NOLL9iM096z5DRfoulumcOxaJyXTsFfmTvJs6U6hpffdpAtC178hq3zCaasC
+AwEAAaOCAxgwggMUMH8GCCsGAQUFBwEBBHMwcTA4BggrBgEFBQcwAoYsaHR0cDovL2NhY2VydC5w
+ZWMuaXQvY2VydHMvYXJ1YmFwZWMtZWlkYXMtZzEwNQYIKwYBBQUHMAGGKWh0dHA6Ly9vY3NwMDEu
+cGVjLml0L3ZhL2FydWJhcGVjLWVpZGFzLWcxMB0GA1UdDgQWBBSECHrASWR+h2YZ2w4GFMn4NwvY
+pzAfBgNVHSMEGDAWgBTGbzuFe9EmsXiaQqQlaQz2/3qgZzAbBgNVHRIEFDASgRBpbmZvQGFydWJh
+cGVjLml0MIG/BggrBgEFBQcBAwSBsjCBrzAIBgYEAI5GAQEwCwYGBACORgEDAgEUMAgGBgQAjkYB
+BDCBiwYGBACORgEFMIGAMD4WOGh0dHBzOi8vd3d3LnBlYy5pdC9yZXBvc2l0b3J5L2FydWJhcGVj
+LXF1YWxpZi1wZHMtaXQucGRmEwJpdDA+FjhodHRwczovL3d3dy5wZWMuaXQvcmVwb3NpdG9yeS9h
+cnViYXBlYy1xdWFsaWYtcGRzLWVuLnBkZhMCZW4wggEhBgNVHSAEggEYMIIBFDAJBgcEAIvsQAEC
+MIIBBQYLKwYBBAGB6C0BBwIwgfUwQQYIKwYBBQUHAgEWNWh0dHBzOi8vd3d3LnBlYy5pdC9yZXBv
+c2l0b3J5L2FydWJhcGVjLXF1YWxpZi1jcHMucGRmMIGvBggrBgEFBQcCAjCBogyBn0lsIHByZXNl
+bnRlIGNlcnRpZmljYXRvIMOoIHZhbGlkbyBzb2xvIHBlciBmaXJtZSBhcHBvc3RlIGNvbiBwcm9j
+ZWR1cmEgYXV0b21hdGljYS4gVGhlIGNlcnRpZmljYXRlIG1heSBvbmx5IGJlIHVzZWQgZm9yIHVu
+YXR0ZW5kZWQvYXV0b21hdGljIGRpZ2l0YWwgc2lnbmF0dXJlLjA9BgNVHR8ENjA0MDKgMKAuhixo
+dHRwOi8vY3JsMDEucGVjLml0L3ZhL2FydWJhcGVjLWVpZGFzLWcxL2NybDAOBgNVHQ8BAf8EBAMC
+BkAwDQYJKoZIhvcNAQELBQADggIBAHo8NFdIzzttoTBmUgBX0D8Nm6DoAL1zA1py2Iudh9dvdjAc
+8gtbOZEDWJtqwhXybt6AdE72zhcducV2aQUohC/HqyekR+PTIe3WcHLJe0ZAAihx4tyZdOIqKwwK
+owgV+u61hLnHLyMLXq1QCzFtqKMeX/+M4i+xmvK7ao3ecjzxXAOhS0UbJ1gDKuE+/JtXDK5Nf8+h
+wJndqniYrSEHT+Lxs1xLAdfEKx6Gd0FOj2HUt8PK/i7PpoCw11QrkXMYoCxOSkWixrraXMSjTKXr
+nfsC92HcqLKB+r7V2c95ruPfnN8tCQ6Nxldn3PIgkpqADHG2jzopSYyF1T7BmdCZD4S9lGmH0f3O
+v7ZqpNfCTL6Hrgh+bg3Z/PCR+5vHWgXo0PiAWzybyTAGVEH1c37i2A/ZZfyQIzfRTFKIoj1Q4xYU
+rUlmVPKuIuCvQSIdphIsAntQ+FGrEOtImc3xjAxiq3jd5RdT07kcE6H5mTlLIM/dr2i2oGHRfVO2
+lE1htlD1e3o33nOY6K/a3yeCT+CL6uEkdI4NrxS0u31rL41IhyuxY3uEwXX+HRHbM0xyrjW4nn0I
+gQa6gsjzvwybmvGFq2brSUc6Qwm/Dl1yVN0ExBlgwq2hEaaqfVrYaE0gvtjaWBmcMi5mGL5TPtJi
+NW3990CpZs8z/YM2CkDtsyStm2E0
+</ds:X509Certificate>
+</ds:X509Data>
+</ds:KeyInfo>
+<ds:Object>
+	<xades:QualifyingProperties xmlns:xades="http://uri.etsi.org/01903/v1.3.2#" Target="#Signer-T-1553592022999">
+		<xades:SignedProperties Id="SignedProperties-Signer-T-1553592022999">
+			<xades:SignedSignatureProperties>
+				<xades:SigningTime>2019-03-26T10:20:22+01:00</xades:SigningTime>
+				<xades:SigningCertificate>
+					<xades:Cert>
+						<xades:CertDigest>
+							<ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></ds:DigestMethod>
+							<ds:DigestValue>D9TrV2JmUKDBBBte3vI0HObyo7l96bCOXu/mJQCchCY=</ds:DigestValue>
+						</xades:CertDigest>
+						<xades:IssuerSerial>
+							<ds:X509IssuerName>C=IT,L=Arezzo,O=ArubaPEC S.p.A.,2.5.4.97=VATIT-01879020517,OU=Qualified Trust Service Provider,CN=ArubaPEC EU Qualified Certificates CA G1</ds:X509IssuerName>
+							<ds:X509SerialNumber>5214434576513777905</ds:X509SerialNumber>
+						</xades:IssuerSerial>
+					</xades:Cert>
+				</xades:SigningCertificate>
+			</xades:SignedSignatureProperties>
+		</xades:SignedProperties>
+	</xades:QualifyingProperties>
+</ds:Object>
+</ds:Signature>
+</ns3:FatturaElettronica>
