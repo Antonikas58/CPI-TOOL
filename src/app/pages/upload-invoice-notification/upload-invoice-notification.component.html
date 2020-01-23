@@ -1,4 +1,7 @@
+<body>
 <div class="fd-shell fd-shell--fixed fd-shell--fundamentals">
+ 
+
   <div class="fd-page">
 
     <header class="fd-page__header">
@@ -21,7 +24,7 @@
 
       <div *ngIf="errorMessage">
         <span class="fd-badge fd-badge--error">Error</span>&nbsp;
-        <span class="fd-label fd-label--error">{{errorMessage}}</span>
+        <!--<span class="fd-label fd-label--error">{{errorMessage}}</span>-->
       </div>
 
     </header>
@@ -36,33 +39,60 @@
                 <h1 class="fd-action-bar__title">
                 Invoice Notification File
                 </h1>
-                <input class="fd-button--light" type="file" name="file" size="150" (change)="detectInvoiceNotificationFiles($event)" />
+                <input class="fd-button--light" type="file" name="file" size="150"  (change)="fileEvent($event)" multiple ="multiple" />
+                <div *ngIf="selectedFiles">
+                  <table class="table table-fixed">
+                    <thead>
+                      <tr>
+                        <th class="col-xs-3">File name</th>
+                        <th class="col-xs-3">File type</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let selectedFile of selectedFiles">
+                        <td class="col-xs-3">{{selectedFile.name}}</td>
+                        <td class="col-xs-3">{{selectedFile.type}}</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+				 
                 <br>Example: IT00000000000_000k0_MC_002.xml <br>Don't change the file name when you download it from SdI.
               </section>
 
               <section class="fd-section">
-                <button class="fd-button--emphasized" [disabled]="!invoiceNotificationFile" (click)="validateInput()">Upload!</button>
+                <button class="fd-button--emphasized" [disabled]="!selectedFiles"  (click)="validateInput()">Upload!</button>
               </section>
           </div>
         </div>
 
 
-        <div *ngIf="showConfirm">
-          <section class="fd-section">
-            <div class="fd-panel-grid">
-              <div class="fd-panel">
-                <label class="fd-form__label" for="select-1">Invoice Notification File:</label>
-                <input class="fd-form__control" type="text" id="input-6" [value]="invoiceNotificationFileName" disabled>
-              </div>
-            </div>
-          </section>
-          <section class="fd-section">
-            <button class="fd-button--emphasized" (click)="upload()">Complete Upload</button>
-          </section>
-        </div>
+
 
         <div *ngIf="showStatus">
-          <section class="fd-section">
+
+          <table class="table table-fixed">
+            <thead>
+              <tr>
+                <th class="col-xs-3">File name</th>
+                <th class="col-xs-3">Status</th>
+                <th class="col-xs-3">CPI Message ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let Item of uploadStatusArray">
+                <td class="col-xs-3">{{Item.FileName}}</td>
+                <td class="col-xs-3">{{Item.uploadStatus}}</td>
+                <td class="col-xs-3">{{Item.uploadMplMessageId}}</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+
+
+          <!--<section class="fd-section">
             <div class="fd-panel-grid">
               <div class="fd-panel">
                 <label class="fd-form__label" for="select-1">Status:</label>
@@ -77,10 +107,16 @@
                 <input class="fd-form__control" type="text" id="input-6" [value]="uploadMplMessageId" disabled>
               </div>
             </div>
-          </section>
+          </section>-->
+
+
+
           <section class="fd-section">
             <button class="fd-button--emphasized" (click)="startAgain()">Start Again</button>
           </section>
+
+
+
         </div>
 
 
@@ -91,3 +127,4 @@
 
   </div>
 </div>
+</body>

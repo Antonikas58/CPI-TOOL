@@ -8,7 +8,9 @@ export class ConversionService {
   constructor() { }
 
   convertInvoice(metadataFile: any, metadatFileName: string, invoiceFile: any, invoiceFileName: string): string {
-    let metadata_identificativosdi = this.getElementByXpath("//IdentificativoSdI", this.convertString2XML(metadataFile))//is.convertString2XML();//map.get("metadata-identificativosdi");
+
+    let xml = this.convertString2XML(metadataFile);
+    let metadata_identificativosdi = this.getElement("//IdentificativoSdI", xml)//is.convertString2XML();//map.get("metadata-identificativosdi");
     let invoice_64 = btoa(invoiceFile);
     let metadata_64: string = btoa(metadataFile);
 
@@ -23,8 +25,8 @@ export class ConversionService {
   }
 
 convertInvoiceNotification(invoiceNotificationFile: any, invoiceNotificationFileName: string): string {
-
-    let identificativosdi = this.getElementByXpath("//IdentificativoSdI", this.convertString2XML(invoiceNotificationFile));
+    let xml = this.convertString2XML(invoiceNotificationFile);
+    let identificativosdi = this.getElement("//IdentificativoSdI", xml );
     let invoice_notification_64 = btoa(invoiceNotificationFile);
     let action = this.soapRootTag(invoiceNotificationFileName);
     
@@ -77,8 +79,31 @@ convertInvoiceNotification(invoiceNotificationFile: any, invoiceNotificationFile
     return oParser.parseFromString(string, "application/xml");
   }
 
-  private getElementByXpath(path: string, document: Document): string {
+
+
+  private getElement(path: string,document: Document): string {
+
+    let rootnode = document.getRootNode().firstChild.nodeName;
+// special logic for new format
+   if (rootnode == 'metadatiFattura') {
+    let elements = document.getElementsByTagName('metadato');
+
+    for (var i = 0; i < elements.length; i++) {   
+   
+      var valore = document.getElementsByTagName("metadato")[i].childNodes[1].textContent;
+    
+       if ( valore == 'idfile'){
+    
+        return  document.getElementsByTagName("metadato")[i].childNodes[2].nextSibling.textContent;
+       }
+     }   
+   }
+   else {
     return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.textContent;
+   }
+
+    
+    
   }
 
   getNotificationCode(filename: any): string {
