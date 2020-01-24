@@ -4,6 +4,7 @@ import { RequestService } from 'src/app/services/request.service';
 import { ConversionService } from 'src/app/services/conversion.service';
 import { Observable } from 'rxjs';
 
+
 @Component({
   selector: 'app-upload-invoice',
   templateUrl: './upload-invoice.component.html',
@@ -29,6 +30,7 @@ export class UploadInvoiceComponent implements OnInit {
   constructor(private validateService: ValidationService,
     private requestService: RequestService,
     private conversionService: ConversionService) { }
+
 
   ngOnInit() {
 
@@ -144,12 +146,16 @@ export class UploadInvoiceComponent implements OnInit {
     let files: [] = event.target.files;
     if (files) {
       for (let file of files) {
-        var reader = new FileReader();
-        reader.readAsText(file); // read file as data url
+          var reader = new FileReader();
+//        reader.readAsText(file); // read file as data url
+        reader.readAsDataURL(file); // read file as data url
         this.invoiceFileName = file['name'];
         reader.onload = (e) => { // called once readAsDataURL is completed
           this.invoiceFiles = e.target['result'];
+           
         }
+
+
       }
     }
   }

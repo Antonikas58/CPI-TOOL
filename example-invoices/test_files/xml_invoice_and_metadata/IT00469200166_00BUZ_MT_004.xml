@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns3:FileMetadati xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" xmlns:ns3="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fattura/messaggi/v1.0" versione="1.0">
+    <IdentificativoSdI>2040128071</IdentificativoSdI>
+    <NomeFile>IT00469200166_00BUZ.xml.p7m</NomeFile>
+    <Hash>6c2df9ea9d02da9ebfafcca46042e4e9fe2a11ca14ba199e7625c6de5d342468</Hash>
+    <CodiceDestinatario>893R9T8</CodiceDestinatario>
+    <Formato>FPR12</Formato>
+    <TentativiInvio>4</TentativiInvio>
+    <MessageId>5823834367</MessageId>
+</ns3:FileMetadati>

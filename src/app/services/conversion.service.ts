@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +12,7 @@ export class ConversionService {
 
     let xml = this.convertString2XML(metadataFile);
     let metadata_identificativosdi = this.getElement("//IdentificativoSdI", xml)//is.convertString2XML();//map.get("metadata-identificativosdi");
-    let invoice_64 = btoa(invoiceFile);
+    let invoice_64 = invoiceFile.substr( invoiceFile.indexOf(',')+1); ;
     let metadata_64: string = btoa(metadataFile);
 
     let payload = `<typ:fileSdIConMetadati xmlns:typ="http://www.fatturapa.gov.it/sdi/ws/trasmissione/v1.1/types">
@@ -126,9 +127,6 @@ convertInvoiceNotification(invoiceNotificationFile: any, invoiceNotificationFile
        }
        return actionName; 
 }
-
-
-
 
 
 }
