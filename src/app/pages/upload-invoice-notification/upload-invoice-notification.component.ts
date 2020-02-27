@@ -17,14 +17,17 @@ export class UploadInvoiceNotificationComponent implements OnInit {
   public showConfirm: any;
   public showStatus: any;
 
-  public invoiceNotificationFile: any;
-  public invoiceNotificationFileName: string;
+  public invoiceNotificationFile: Array<{ name: string, content: string}> = [];
+
   public payload: string;
 
   public uploadStatus: any;
+
+  public uploadStatusArray = [];
+
   public uploadMplMessageId: any;
-
-
+  public selectedFiles: FileList;
+  public files: [];
   constructor(private validateService: ValidationService,
     private requestService: RequestService,
     private conversionService: ConversionService) { }
@@ -40,24 +43,52 @@ export class UploadInvoiceNotificationComponent implements OnInit {
   }
 
   validateInput() {
-    let result = this.validateService.validateInvoiceNotification(this.invoiceNotificationFileName, this.invoiceNotificationFile );
-    if (result != true) {
-      this.errorMessage = <string>result;
-    } else {
+    
 
-      this.errorMessage = null;
-      this.payload = this.conversionService.convertInvoiceNotification(this.invoiceNotificationFile, this.invoiceNotificationFileName);
 
-     //this.showUpload = false;
-     // this.showConfirm = true;
-     // this.showStatus = false;
+    if (this.files) {
+      
+     
+       for (let file of this.invoiceNotificationFile) {  
 
-      this.upload();
+
+
+
+         let result = this.validateService.validateInvoiceNotification(file.name, file.content);
+         if (result != true) {
+           this.errorMessage = <string>result;
+
+           let status = {
+             FileName: file.name,
+             uploadStatus: this.errorMessage,
+             uploadMplMessageId: null
+           };
+
+           this.uploadStatusArray.push(status);
+           this.showUpload = false;
+           this.showConfirm = false;
+           this.showStatus = true;
+
+         } else {
+
+           this.errorMessage = null;
+           this.payload = this.conversionService.convertInvoiceNotification(file.content, file.name);
+
+
+           
+           this.upload(file.name);
+
+         }
+ 
+      }
+
+      
 
     }
-  }
 
-  upload() {
+    }
+
+  upload(FileName:string) {
 
     let endpoint = this.requestService.getConfiguration().receiveNotificationEndpoint;
     console.log("endpoint:"+endpoint);
@@ -73,8 +104,17 @@ export class UploadInvoiceNotificationComponent implements OnInit {
 
           let sap_messageprocessinglogid = resp.headers.get('sap_messageprocessinglogid');
 
-          this.uploadMplMessageId=sap_messageprocessinglogid;
-          this.uploadStatus = resp.statusText;
+               
+        
+        let status = {
+          FileName: FileName,
+          uploadStatus: resp.statusText,
+          uploadMplMessageId: sap_messageprocessinglogid 
+        };
+
+
+
+          this.uploadStatusArray.push(status);
 
           this.showUpload = false;
           this.showConfirm = false;
@@ -87,9 +127,17 @@ export class UploadInvoiceNotificationComponent implements OnInit {
 
           let sap_messageprocessinglogid = error.headers.get('sap_messageprocessinglogid');
           
-          this.uploadMplMessageId=sap_messageprocessinglogid;
-          this.uploadStatus = error.message;
+                 
 
+      let status = {
+        FileName: FileName,
+        uploadStatus: error.message,
+        uploadMplMessageId: sap_messageprocessinglogid
+      };
+
+
+          this.uploadStatusArray.push(status);
+          
           this.payload = null;
           
           this.showUpload = false;
@@ -108,29 +156,51 @@ export class UploadInvoiceNotificationComponent implements OnInit {
       this.showStatus = false;
 
       this.invoiceNotificationFile = null;
-      this.invoiceNotificationFileName = null;
+
 
       this.errorMessage = null;
       this.uploadStatus = null;
+      this.selectedFiles = null;
+      this.files = null;
+      this.uploadStatusArray = [];
 
   }
 
 
 
 
-  detectInvoiceNotificationFiles(event) {
-    let files: [] = event.target.files;
-    if (files) {
-      for (let file of files) {
+detectInvoiceNotificationFiles(File: any) {
+    
+    if (File) {
+ 
         var reader = new FileReader();
-        reader.readAsText(file); // read file as data url
-        this.invoiceNotificationFileName = file['name'];
-        reader.onload = (e) => { // called once readAsDataURL is completed
-          this.invoiceNotificationFile = e.target['result'];
+        reader.readAsText(File); 
+         let filename: any  = File['name'];
+        reader.onload = (e) => { 
+          let filecontent: any = e.target['result'];
+          this.invoiceNotificationFile.push({name: filename, content: filecontent});
         }
-      }
+      reader = null;
     }
+
   }  
+
+
+  fileEvent(event) {
+   
+
+    this.selectedFiles = event.target.files;
+    this.files = event.target.files;
+
+    for (let file of this.files) {
+      this.detectInvoiceNotificationFiles(file);
+    }
+
+  }
+
+
+
+
 
 
 }

@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\pages",
+    "\\src\\app\\pages\\upload-invoice",
+    "\\src\\app\\pages\\upload-invoice-notification",
+    "\\src\\app\\services"
+  ],
+  "SelectedNode": "\\src\\app\\services\\conversion.service.ts",
+  "PreviewInSolutionExplorer": false
+}

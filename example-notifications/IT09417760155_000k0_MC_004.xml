@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><ns3:RicevutaImpossibilitaRecapito xmlns:ns3="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fattura/messaggi/v1.0" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versione="1.0">
     <IdentificativoSdI>5808248</IdentificativoSdI>
-    <NomeFile>IT09417760155_000k0.xml.p7m</NomeFile>
+    <NomeFile>IT09417760155_000k04.xml.p7m</NomeFile>
     <Hash>43340d8df1378580e629a4b08544af3c8d643ea976d62e119bca3dee0f208683</Hash>
     <DataOraRicezione>2018-12-07T10:47:01.000+01:00</DataOraRicezione>
     <DataMessaADisposizione>2018-12-08</DataMessaADisposizione>
