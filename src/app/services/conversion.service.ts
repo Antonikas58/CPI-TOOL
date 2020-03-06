@@ -39,41 +39,7 @@ convertInvoiceNotification(invoiceNotificationFile: any, invoiceNotificationFile
     return payload;
 
     }
-  /*  
 
-            def String body = message.getBody(String.class);
-            String file64 = new String(Base64.encodeBase64(body.getBytes('UTF-8')));
-        
-            def map = message.getProperties();
-            
-            def root = map.get("root");
-            def file_identificativosdi = map.get("file-identificativosdi");
-            def file_nomefile = map.get("file-nomefile");
-            
-        
-            
-          def payload = """<typ:${root} xmlns:typ="http://www.fatturapa.gov.it/sdi/ws/trasmissione/v1.1/types">
-            <IdentificativoSdI>${file_identificativosdi}</IdentificativoSdI>
-            <NomeFile>${file_nomefile}</NomeFile>
-            <File>${file64}</File>
-        </typ:${root}>""";
-
-
-
-
-    //let metadata_identificativosdi = this.getElementByXpath("//IdentificativoSdI", this.convertString2XML(metadataFile))//is.convertString2XML();//map.get("metadata-identificativosdi");
-
-    let identificativosdi = "?";
-    let invoice_notification_64 = btoa(invoiceNotificationFile);
-    
-    let payload = `<typxxx:fileSdIConMetadati xmlns:typ="http://www.fatturapa.gov.it/sdi/ws/trasmissione/v1.1/types">
-      <IdentificativoSdI>${identificativosdi}</IdentificativoSdI>
-      <NomeFile>${invoiceNotificationFileName}</NomeFile>
-      <File>${invoice_notification_64}</File>
-      </typ:fileSdIConMetadati>`;
-    return payload;
-  }
-*/
 
   convertString2XML(string: string): any {
     var oParser = new DOMParser();

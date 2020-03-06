@@ -8,18 +8,17 @@
           <br>
           <h2 class="docs-header-h2">
             {{ showUpload ? "Upload Invoice to CPI":""}}
-            {{ showConfirm ? "--Confirm Upload to CPI":""}}
             {{ showStatus ? "Status":""}}
           </h2>
           <p>
             {{ showUpload ? "Download an invoice and its metadata files from the SdI site, select them here using 'Choose file' buttons and complete the upload by clicking on 'Upload!'.":""}}
-            {{ showStatus ? "Find below the status of the opearation. Click on 'Start Again' to upload another file." : ""}}
+            {{ showStatus ? "Find below the status of the opearation. Click on 'Start Again' to upload other files." : ""}}
           </p>
         </div>
       </div>
       <div *ngIf="errorMessage">
         <span class="fd-badge fd-badge--error">Error</span>&nbsp;
-        <span class="fd-label fd-label--error">{{errorMessage}}</span>
+        <span class="fd-label fd-label--error">{{errorMessage}}</span> 
       </div>
     </header>
 
@@ -29,73 +28,71 @@
 
         <div class="fd-panel" *ngIf="showUpload">
           <div class="fd-form__set">
-            <section class="fd-section" style="${property.FILE_UPLOAD_STYLE}">
-              <h1 class="fd-action-bar__title">
-                Metadata File
-              </h1>
-              <input class="fd-button--light" type="file" name="file_metadata" size="150" (change)="detectMetadataFiles($event)"/>
-              <br>Example: IT00000000000_0MOFH_MT_001.xml
-              <br>Don't change the file name when you download it from SdI.
 
-            </section>
             <section class="fd-section" style="${property.FILE_UPLOAD_STYLE}">
               <h1 class="fd-action-bar__title">
-                Invoice File
+                Files
               </h1>
-              <input class="fd-button--light" type="file" name="file_invoice" size="150" (change)="detectInvoiceFiles($event)"/>
-              <br>Example: IT00000000000_0MOFH.xml.p7m or IT00000000000_0MOFH.xml
-              <br>Don't change the file name when you download it from SdI.
+              <input class="fd-button--light" type="file" name="file_invoice" size="150" (change)="fileEvent($event)" multiple ="multiple"/>
+
+              <div *ngIf="selectedFiles">
+                <table class="table table-fixed">
+                  <thead>
+                    <tr>
+                      <th class="col-xs-3">Invoice file</th>
+                      <th class="col-xs-3">Metadata file</th>
+                      <th class="col-xs-3">Correlation</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let selectedFile of selectedFiles">
+                      <td class="col-xs-3">{{selectedFile.InvoiceFileName}}</td>
+                      <td class="col-xs-3">{{selectedFile.MetadataFileName}}</td>
+                      <td class="col-xs-3">{{selectedFile.Correlation}}</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+
+              <br>Choose all files (both invoice and metadata) from local folder
+              <br>Don't change the file names when you download it from SdI.
             </section>
             <section class="fd-section">
-              <button class="fd-button--emphasized" [disabled]="!metadataFiles || !invoiceFiles" (click)="validateInput()">Upload!</button>
+              <button class="fd-button--emphasized" [disabled]="!showCorrelate" (click)="connectFiles()">Correlate</button>
+              <p></p>
+              <button class="fd-button--emphasized" [disabled]="!selectedFiles" (click)="validateInput()">Upload!</button>
+              
             </section>
           </div>
         </div>
 
-        <div *ngIf="showConfirm">
-          <section class="fd-section">
-            <div class="fd-panel-grid">
-              <div class="fd-panel">
-                <label class="fd-form__label" for="select-1">Metadata File:</label>
-                <input class="fd-form__control" type="text" id="input-6" [value]="metadataFileName" disabled>
-              </div>
-            </div>
-          </section>
-          <section class="fd-section">
-            <div class="fd-panel-grid">
-              <div class="fd-panel">
-                <label class="fd-form__label" for="select-1">Invoice File:</label>
-                <input class="fd-form__control" type="text" id="input-6" [value]="invoiceFileName" disabled>
-              </div>
-            </div>
-          </section>
-          <section class="fd-section">
-            <button class="fd-button--emphasized" (click)="upload()">Complete</button>
-          </section>
-        </div>
-
-
 
         <div *ngIf="showStatus">
-          <section class="fd-section">
-            <div class="fd-panel-grid">
-              <div class="fd-panel">
-                <label class="fd-form__label" for="select-1">Status:</label>
-                <input class="fd-form__control" type="text" id="input-6" [value]="uploadStatus" disabled>
-              </div>
-            </div>
-          </section>
-          <section class="fd-section">
-            <div class="fd-panel-grid">
-              <div class="fd-panel">
-                <label class="fd-form__label" for="select-1">CPI Message ID:</label>
-                <input class="fd-form__control" type="text" id="input-6" [value]="uploadMplMessageId" disabled>
-              </div>
-            </div>
-          </section>
+
+          <table class="table table-fixed">
+            <thead>
+              <tr>
+                <th class="col-xs-3">File name</th>
+                <th class="col-xs-3">Status</th>
+                <th class="col-xs-3">CPI Message ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let Item of uploadStatusArray">
+                <td class="col-xs-3">{{Item.FileName}}</td>
+                <td class="col-xs-3">{{Item.uploadStatus}}</td>
+                <td class="col-xs-3">{{Item.uploadMplMessageId}}</td>
+              </tr>
+
+            </tbody>
+          </table>
           <section class="fd-section">
             <button class="fd-button--emphasized" (click)="startAgain()">Start Again</button>
           </section>
+
+
+
         </div>
 
       </section>

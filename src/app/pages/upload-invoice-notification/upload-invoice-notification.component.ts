@@ -12,22 +12,17 @@ import { Observable } from 'rxjs';
 export class UploadInvoiceNotificationComponent implements OnInit {
 
   public errorMessage: string;
-
   public showUpload: any;
   public showConfirm: any;
   public showStatus: any;
-
   public invoiceNotificationFile: Array<{ name: string, content: string}> = [];
-
   public payload: string;
-
   public uploadStatus: any;
-
   public uploadStatusArray = [];
-
   public uploadMplMessageId: any;
   public selectedFiles: FileList;
   public files: [];
+
   constructor(private validateService: ValidationService,
     private requestService: RequestService,
     private conversionService: ConversionService) { }

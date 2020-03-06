@@ -7,8 +7,24 @@ export class ValidationService {
 
   constructor() { }
 
+  isMetadataFile ( filecontent: any): boolean {
+    
+    var oParser = new DOMParser();
+    let document = oParser.parseFromString(filecontent, "application/xml");
+    let rootnode = document.getRootNode().firstChild.nodeName;
+
+   if ((rootnode == 'metadatiFattura' ) || (rootnode == 'FileMetadati')) {
+      return true;
+   }
+   else {
+
+    return false;
+   }
+  }
+
+
   validateInvoice(metadataFile: any, invoiceFile: any): string | boolean {
-    if (!metadataFile || !invoiceFile) return ('Choose a file before uploading!');
+    if (!metadataFile || !invoiceFile) return ('Can not find equivalency for all files');
     return true;
   }
 
@@ -44,13 +60,7 @@ export class ValidationService {
     //console.log("result "+result);
 
     if (result!=null) {
-		/*
-	        println matcher[0][0] - IT09417760155_000k4_MC_002.xml
-	        println matcher[0][1] - IT09417760155
-	        println matcher[0][2] - 000k4
-	        println matcher[0][3] - MC
-	        println matcher[0][4] - 002
-	    */
+
 		
 		if (this.isNotEmpty(result[1]) && this.isNotEmpty(result[2]) && this.isNotEmpty(result[3]) && this.isNotEmpty(result[4])) return true;
     } else {
