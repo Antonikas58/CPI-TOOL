@@ -11,8 +11,10 @@ export class ValidationService {
     
     var oParser = new DOMParser();
     let document = oParser.parseFromString(filecontent, "application/xml");
-    let rootnode = document.getRootNode().firstChild.nodeName;
 
+    let rootnode = document.getRootNode().firstChild.nodeName;
+    rootnode = rootnode.substr( rootnode.indexOf(':')+1); 
+    
    if ((rootnode == 'metadatiFattura' ) || (rootnode == 'FileMetadati')) {
       return true;
    }
