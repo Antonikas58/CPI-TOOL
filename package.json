@@ -23,7 +23,7 @@
     "core-js": "^2.5.4",
     "fiori-fundamentals": "^1.5.7",
     "fundamental-ngx": "^0.4.5",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ng2-file-upload": "^1.3.0",
     "popper": "^1.0.1",
     "rxjs": "~6.3.3",
